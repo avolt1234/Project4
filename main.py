@@ -2,10 +2,15 @@ import random
 
 def Main():
 
-    while True:
-        numbers = str(random.randint(0, 9999))
-        if len(set(numbers)) == len(numbers):
-            break
+    debug = input('Enter T to enter the randomly generated number: ')
+
+    if debug == 'T':
+        numbers = input(str('Enter the random numbers: '))
+    else:
+        while True:
+            numbers = str(random.randint(0, 9999))
+            if len(set(numbers)) == len(numbers):
+                break
 
     count = 0
     while count < 10:
@@ -15,8 +20,13 @@ def Main():
         else:
             numbers = numbers
 
-        guess = input('Enter is your guess: ')
-        #TODO create checker for repeated numbers in the input
+        while True:
+            guess = input('Enter your guess: ')
+            if len(guess) == 4:
+                break
+            else:
+                print('Invalid Guess!!')
+
 
         bulls = 0
         cows = 0
@@ -27,7 +37,7 @@ def Main():
             elif guess[i] in numbers:
                 bulls += 1
 
-        print('\nCows: {0} \nBulls: {1}'.format(str(cows), str(bulls)))
+        print('\n{0} is incorrect\nCows: {1} \nBulls: {2}\n'.format(str(guess), str(cows), str(bulls)))
 
         if cows == 4:
             count = 10
