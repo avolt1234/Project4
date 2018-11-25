@@ -33,6 +33,8 @@ def Main():
             count = 10
             print('Congrats, you won the game!!!!')
 
+    print(numbers)
+
 
 if __name__ == '__main__':
     Main()
