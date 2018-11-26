@@ -11,7 +11,7 @@ def Main():
             numbers = str(random.randint(0, 9999))
             if len(set(numbers)) == len(numbers):
                 break
-
+    #YEs
     count = 0
     while count < 10:
 
