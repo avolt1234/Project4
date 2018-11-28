@@ -11,7 +11,7 @@ def Main():
             numbers = str(random.randint(0, 9999))
             if len(set(numbers)) == len(numbers):
                 break
-    #YEs
+
     count = 0
     while count < 10:
 
@@ -23,7 +23,11 @@ def Main():
         while True:
             guess = input('Enter your guess: ')
             if len(guess) == 4:
-                break
+                checker = guess.lstrip('0')
+                if len(checker) == len(set(checker)):
+                    break
+                else:
+                    print('Choose a guess that doesnt have consecutive numbers')
             else:
                 print('Invalid Guess!!')
 
@@ -41,9 +45,9 @@ def Main():
 
         if cows == 4:
             count = 10
-            print('Congrats, you won the game!!!!')
+            print('Congrats, you won the game!')
 
-    print(numbers)
+    print('Sorry, you lost the game the correct numbers were \n {0}'.format(str(numbers)))
 
 
 if __name__ == '__main__':
